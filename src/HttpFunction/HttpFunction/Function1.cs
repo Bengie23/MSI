@@ -31,13 +31,13 @@ namespace HttpFunction
 
             try
             {
-                var clientId = "cd1fc716-c659-4fc9-8652-034817e0b826";
-                var clientSecret = "sLAZs9_yYYOubRn~YOHZ4pHj7rmemV6-.v";
+                var clientId = "";
+                var clientSecret = "";
 
                 //Make a Call to API with generated access token using CLIENTSECRET
 
                 //var credential = new ClientCredential(clientId, clientSecret);
-                //var authContext = new AuthenticationContext("https://login.microsoftonline.com/5e7db0db-d885-4b21-9c08-2c696ab14fc6");
+                //var authContext = new AuthenticationContext("https://login.microsoftonline.com/");
                 //var token = await authContext.AcquireTokenAsync(clientId, credential);
                 //log.LogInformation(token is null ? "token is null" : "token is not null");
                 //var accessToken = token.AccessToken;
@@ -69,8 +69,8 @@ namespace HttpFunction
 
                 //Create an instance of QueueClient using MSI
 
-                //string pubsubConnection = "Endpoint=sb://msi-test.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=IejCipbIVNpUJfN8AhuzYw/gZreiCKTfeyfCBKrk/9M=";
-                string pubsubConnection = "sb://msi-test.servicebus.windows.net";
+                
+                string pubsubConnection = "";
                 string queueName = "testqueue";
                 var tokenProvider = new ManagedIdentityTokenProvider();
                 queueClient = new QueueClient(pubsubConnection, queueName, tokenProvider);
